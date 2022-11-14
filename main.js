@@ -95,10 +95,16 @@ async function showModal(modalID, url) {
     modalBordersText.textContent = `Border: No borders`;
   }
 
+  if (countryFindedItem.subregion != undefined) {
+    modalSubregionText.textContent = `Subregion: ${countryFindedItem.subregion}`;
+  } else {
+    modalSubregionText.textContent = `Subregion: No Subregions`;
+  }
+
   modalLanguagesText.textContent = `Language: ${Object.values(
     countryFindedItem.languages
   ).join(", ")}`;
-  modalSubregionText.textContent = `Subregion: ${countryFindedItem.subregion}`;
+
   modalMapLink.href = countryFindedItem.maps.googleMaps;
 }
 
